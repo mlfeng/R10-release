@@ -1909,8 +1909,8 @@ static int goodix_ts_early_suspend(struct tp_device *tp_d)
 {
     struct goodix_ts_data *ts;
     s8 ret = -1;
-    struct regulator *regulator_tp = NULL;
-    int reg = 0;
+//    struct regulator *regulator_tp = NULL;
+//    int reg = 0;
 
     ts = container_of(tp_d, struct goodix_ts_data, tp);
     GTP_DEBUG_FUNC();
@@ -1942,6 +1942,7 @@ static int goodix_ts_early_suspend(struct tp_device *tp_d)
     // to avoid waking up while not sleeping
     //  delay 48 + 10ms to ensure reliability
     msleep(58);
+#if 0
 	regulator_tp = regulator_get(NULL,"vcc_tp");
 	if(regulator_tp ==NULL)
 	{
@@ -1955,6 +1956,7 @@ static int goodix_ts_early_suspend(struct tp_device *tp_d)
 	}
 	regulator_put(regulator_tp);
 	msleep(20);
+#endif
 	return 0;
 }
 
@@ -1970,13 +1972,13 @@ static int goodix_ts_early_resume(struct tp_device *tp_d)
 {
     struct goodix_ts_data *ts;
     s8 ret = -1;
-    struct regulator *regulator_tp = NULL;
-    int reg = 0;
+//    struct regulator *regulator_tp = NULL;
+//    int reg = 0;
     ts = container_of(tp_d, struct goodix_ts_data, tp);
     GTP_DEBUG_FUNC();
 
     GTP_INFO("System resume.");
-
+#if 0
 	regulator_tp = regulator_get(NULL, "vcc_tp");
 	if(regulator_tp ==NULL)
 	{
@@ -1990,7 +1992,7 @@ static int goodix_ts_early_resume(struct tp_device *tp_d)
 	}
 	regulator_put(regulator_tp);
 	msleep(10);
-
+#endif
     ret = gtp_wakeup_sleep(ts);
 
 #if GTP_GESTURE_WAKEUP
