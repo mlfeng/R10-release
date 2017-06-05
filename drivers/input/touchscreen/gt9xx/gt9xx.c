@@ -1091,18 +1091,18 @@ void gtp_reset_guitar(struct i2c_client *client, s32 ms)
 
     GTP_DEBUG_FUNC();
     GTP_INFO("Guitar reset");
-    GTP_GPIO_OUTPUT(ts->rst_pin, 0);   // begin select I2C slave addr
+//    GTP_GPIO_OUTPUT(ts->rst_pin, 0);   // begin select I2C slave addr
     msleep(ms);                         // T2: > 10ms
     // HIGH: 0x28/0x29, LOW: 0xBA/0xBB
     GTP_GPIO_OUTPUT(ts->irq_pin, client->addr == 0x14);
 
     msleep(2);                          // T3: > 100us
-    GTP_GPIO_OUTPUT(ts->rst_pin, 1);
+//    GTP_GPIO_OUTPUT(ts->rst_pin, 1);
     
     msleep(6);                          // T4: > 5ms
 
     //GTP_GPIO_AS_INPUT(GTP_RST_PORT);    // end select I2C slave addr
-    gpio_direction_input(ts->rst_pin);
+//    gpio_direction_input(ts->rst_pin);
     //s3c_gpio_setpull(pin, S3C_GPIO_PULL_NONE);
 
 #if GTP_COMPATIBLE_MODE
@@ -1794,13 +1794,14 @@ static s8 gtp_request_io_port(struct goodix_ts_data *ts)
     	gpio_direction_input(ts->tp_select_pin);
     }
 */
+/*
     ret = GTP_GPIO_REQUEST(ts->rst_pin, "GTP_RST_PORT");
     if (ret < 0) 
     {
         GTP_ERROR("2Failed to request GPIO:%d, ERRNO:%d",(s32)ts->rst_pin, ret);
         return -ENODEV;
     }
-    
+*/    
     ret = GTP_GPIO_REQUEST(ts->irq_pin, "GTP_INT_IRQ");
     if (ret < 0) 
     {
@@ -1818,14 +1819,14 @@ static s8 gtp_request_io_port(struct goodix_ts_data *ts)
     }
 
     //GTP_GPIO_AS_INPUT(ts->rst_pin);
-    gpio_direction_input(ts->rst_pin);
+//    gpio_direction_input(ts->rst_pin);
     //s3c_gpio_setpull(pin, S3C_GPIO_PULL_NONE);
 
     gtp_reset_guitar(ts->client, 20);
     
     if(ret < 0)
     {
-        GTP_GPIO_FREE(ts->rst_pin);
+//        GTP_GPIO_FREE(ts->rst_pin);
         GTP_GPIO_FREE(ts->irq_pin);
     }
 
@@ -2620,6 +2621,11 @@ static int goodix_ts_probe(struct i2c_client *client, const struct i2c_device_id
     	mGtpChange_X2Y = TRUE;
         mGtp_X_Reverse = FALSE;
         mGtp_Y_Reverse = TRUE;
+    } else if (val == 10) {
+        m89or101 = TRUE;
+        mGtpChange_X2Y = FALSE;
+        mGtp_X_Reverse = FALSE;
+        mGtp_Y_Reverse = FALSE;
     }
 
     ts->irq_pin = of_get_named_gpio_flags(np, "touch-gpio", 0, (enum of_gpio_flags *)(&ts->irq_flags));
@@ -2762,7 +2768,7 @@ static int goodix_ts_probe(struct i2c_client *client, const struct i2c_device_id
 probe_init_error:
     printk("   <%s>_%d  prob error !!!!!!!!!!!!!!!\n", __func__, __LINE__);    
     tp_unregister_fb(&ts->tp);
-    GTP_GPIO_FREE(ts->rst_pin);
+//    GTP_GPIO_FREE(ts->rst_pin);
     GTP_GPIO_FREE(ts->irq_pin);
 probe_init_error_requireio:
     tp_unregister_fb(&ts->tp); 

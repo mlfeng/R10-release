@@ -273,7 +273,7 @@
 		touch-gpio = <&gpio0 GPIO_A0 IRQ_TYPE_LEVEL_LOW>;
 		max-x = <1280>;
 		max-y = <800>;
-		tp-size = <101>;
+		tp-size = <10>;
 		status = "okay";
 	};
 
