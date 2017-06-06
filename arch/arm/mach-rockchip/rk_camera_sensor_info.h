@@ -37,6 +37,8 @@
 #define RK29_CAM_SENSOR_SP0718  sp0718
 #define RK29_CAM_SENSOR_SP0838  sp0838
 #define RK29_CAM_SENSOR_SP2518  sp2518
+#define RK29_CAM_SENSOR_SP0A19  sp0a19
+#define RK29_CAM_SENSOR_SP2519  sp2519
 #define RK29_CAM_SENSOR_S5K5CA  s5k5ca
 #define RK29_CAM_ISP_MTK9335	mtk9335isp
 #define RK29_CAM_SENSOR_HM2057  hm2057
@@ -86,6 +88,8 @@
 #define RK29_CAM_SENSOR_NAME_SP0718  "sp0718"
 #define RK29_CAM_SENSOR_NAME_SP0838  "sp0838"
 #define RK29_CAM_SENSOR_NAME_SP2518  "sp2518"
+#define RK29_CAM_SENSOR_NAME_SP0a19  "sp0a19"
+#define RK29_CAM_SENSOR_NAME_SP2519  "sp2519"
 #define RK29_CAM_SENSOR_NAME_S5K5CA  "s5k5ca"
 #define RK29_CAM_ISP_NAME_MTK9335ISP "mtk9335isp"
 #define RK29_CAM_SENSOR_NAME_HM2057  "hm2057"
@@ -154,6 +158,8 @@
 #define sp0718_FULL_RESOLUTION      0x30000
 #define sp0838_FULL_RESOLUTION      0x30000
 #define sp2518_FULL_RESOLUTION      0x200000
+#define sp0a19_FULL_RESOLUTION      0x30000
+#define sp2519_FULL_RESOLUTION      0x200000
 #define gc0329_FULL_RESOLUTION      0x30000
 #define s5k5ca_FULL_RESOLUTION      0x300000
 #define mtk9335isp_FULL_RESOLUTION  0x500000
@@ -221,6 +227,7 @@
 #define sp0718_I2C_ADDR             0x42
 #define sp0838_I2C_ADDR             0x30
 #define sp0a19_I2C_ADDR             0x7a
+#define sp2519_I2C_ADDR             0x61
 #define sp1628_I2C_ADDR             0x78
 #define sp2518_I2C_ADDR             0x60
 #define mtk9335isp_I2C_ADDR         0x50
@@ -287,6 +294,7 @@
 #define sp0718_PWRDN_ACTIVE             0x01
 #define sp0838_PWRDN_ACTIVE             0x01
 #define sp0a19_PWRDN_ACTIVE             0x01
+#define sp2519_PWRDN_ACTIVE             0x01
 #define sp1628_PWRDN_ACTIVE             0x01
 #define sp2518_PWRDN_ACTIVE             0x01
 #define hm2057_PWRDN_ACTIVE             0x01
@@ -365,6 +373,7 @@
 #define sp0718_PWRSEQ                   sensor_PWRSEQ_DEFAULT
 #define sp0838_PWRSEQ                   sensor_PWRSEQ_DEFAULT
 #define sp0a19_PWRSEQ                   sensor_PWRSEQ_DEFAULT
+#define sp2519_PWRSEQ                   sensor_PWRSEQ_DEFAULT
 #define sp1628_PWRSEQ                   sensor_PWRSEQ_DEFAULT
 #define sp2518_PWRSEQ                   sensor_PWRSEQ_DEFAULT
 #define hm2057_PWRSEQ                   sensor_PWRSEQ_DEFAULT

@@ -333,12 +333,12 @@
 &rk3126_cif_sensor{
 	status = "okay";
 
-	gc2145 {
-		status = "okay";
+	sp0a19 {
+	       status = "okay";
 	};
 
-	gc0312 {
-		status = "okay";
+	sp2519 {
+	       status = "okay";
 	};
 };
 
