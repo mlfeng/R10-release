@@ -88,11 +88,11 @@
 				/* KHz    uV */
 				//216000 1050000
 				//408000 1050000
-				//600000 1200000
+				600000 1200000
 				696000 1250000
-				//816000 1300000
-				//1008000 1350000
-				//1200000 1425000
+				816000 1300000
+				1008000 1350000
+				1200000 1425000
 				>;
 			virt-temp-limit-1-cpu-busy = <
 			/* target-temp	limit-freq */
@@ -142,8 +142,8 @@
 
 			freq-table = <
 				/*status		freq(KHz)*/
-				SYS_STATUS_NORMAL	300000
-				SYS_STATUS_SUSPEND	300000
+				SYS_STATUS_NORMAL	400000
+				SYS_STATUS_SUSPEND	400000
 				//SYS_STATUS_VIDEO_1080P  240000
 				//SYS_STATUS_VIDEO_4K     400000
 				//SYS_STATUS_PERFORMANCE  533000
