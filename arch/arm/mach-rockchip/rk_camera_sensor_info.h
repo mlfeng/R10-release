@@ -226,7 +226,7 @@
 
 #define sp0718_I2C_ADDR             0x42
 #define sp0838_I2C_ADDR             0x30
-#define sp0a19_I2C_ADDR             0x7a
+#define sp0a19_I2C_ADDR             0x42
 #define sp2519_I2C_ADDR             0x61
 #define sp1628_I2C_ADDR             0x78
 #define sp2518_I2C_ADDR             0x60
