@@ -39,6 +39,11 @@
 		rockchip,usb_irq_wakeup;
 	};
 
+	rockchip_headset {
+		compatible = "rockchip_headset";
+		headset_gpio = <&gpio2 GPIO_B0 GPIO_ACTIVE_LOW>;
+	};
+
 	wireless-wlan {
 		compatible = "wlan-platdata";
 
