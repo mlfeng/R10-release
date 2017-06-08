@@ -309,11 +309,11 @@
 
 &sdmmc {
 	cd-gpios = <&gpio2 GPIO_A3 GPIO_ACTIVE_HIGH>; /* CD GPIO */
-	status = "disabled";
+	status = "okay";
 };
 
 &uart2 {
-	status = "okay";
+	status = "disabled";
 };
 
 &codec {
