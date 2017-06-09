@@ -19,7 +19,7 @@
 			flash_attach = <0>;
 			resolution = <sp0a19_FULL_RESOLUTION>;
 			powerup_sequence = <sp0a19_PWRSEQ>;
-			orientation = <0>;
+			orientation = <270>;
 			i2c_add = <sp0a19_I2C_ADDR>;
 			i2c_rata = <200000>;
 			i2c_chl = <2>;
@@ -36,7 +36,7 @@
 			flash_attach = <0>;
 			resolution = <sp2519_FULL_RESOLUTION>;
 			powerup_sequence = <sp2519_PWRSEQ>;
-			orientation = <0>;
+			orientation = <90>;
 			i2c_add = <sp2519_I2C_ADDR>;
 			i2c_rata = <200000>;
 			i2c_chl = <2>;
