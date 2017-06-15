@@ -1,5 +1,6 @@
 /dts-v1/;
 
+
 #include "rk3126.dtsi"
 #include "rk3126-cif-sensor.dtsi"
 #include "rk312x-sdk.dtsi"
